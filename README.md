@@ -1,3 +1,41 @@
+//-----authorization lagane ke liye mobgodb c ke bin file me mongod cofiguration me change kre -----------
+security:
+    authorization: enabled
+---------------//
+
+//----congiguration change krne ke baad services( window search box se searck kre) me jake mongodb server ko 
+pehle stop kre 
+tb start 
+tb restart re
+------//
+
+//---authorization hatane ke liye c file ke mongodb configure ko
+#security:
+    #authorization: enabled
+    aisa krne se configure auth se hat jayega-----------//
+
+    
+db.createUser({user:'geekyshows',pwd:'123456',roles:[{role:'read',db:'schooldb'}]})
+
+// show users
+// show dbs
+
+db.student.insertOne({"name":"Sonam","age":23})
+
+exit
+
+db.student.find()
+
+// mongosh --authenticationDatabase "schooldb" -u "geekyshows" -p "123456"
+
+// use schooldb
+
+db.student.find()
+
+// show users
+
+
+
 git init
 
 git branch -M 5-mongoose-authorized
