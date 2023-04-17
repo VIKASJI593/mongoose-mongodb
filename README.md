@@ -22,15 +22,15 @@ nodemon index.js
 
 git init
 
-git branch -M 29-middleware-ROUTE-path
+git branch -M master
 
 git add .
 
 git commit -m "mongodb-mongoose"
 
-git push -u origin main
+git push -u origin master
 
-git push -f -u origin main
+git push -f -u origin master
 
 git branch
 

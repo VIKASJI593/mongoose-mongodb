@@ -1,13 +1,10 @@
 import express from "express";
+import mongoose from "mongoose";
+import connectDB from './db/connectdb.js'
 const app = express();
 const port = process.env.PORT || "8000";
 
-import mongoose from "mongoose";
-
-mongoose.connect("mongodb://127.0.0.1:27017/test").then(()=> {
- 
-  console.log("Database Connected successfully..");
-});
+connectDB()
   
 app.listen(port, () => {
   console.log(`Yupp! My Express server listening at http://localhost:${port}`);
