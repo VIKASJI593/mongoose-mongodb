@@ -1,14 +1,14 @@
 git init
 
-git branch -M 4-mongoose-auth
+git branch -M 5-mongoose-authorized
 
 git add .
 
 git commit -m "mongodb-mongoose"
 
-git push -u origin 4-mongoose-auth
+git push -u origin 5-mongoose-authorized
 
-git push -f -u origin 4-mongoose-auth
+git push -f -u origin 5-mongoose-authorized
 
 git branch
 

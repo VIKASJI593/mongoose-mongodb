@@ -3,8 +3,7 @@ import express from "express";
 const app = express();
 const port = process.env.PORT || "8000";
 
-//auhentication
-const DATABASE_URL = process.env.DATABASE_URL || "mongodb://geekyshows:123456@127.0.0.1:27017/schooldb?authsource=schooldb";
+const DATABASE_URL = process.env.DATABASE_URL || "mongodb://127.0.0.1:27017";
 
 // database connection
 connectDB(DATABASE_URL);
