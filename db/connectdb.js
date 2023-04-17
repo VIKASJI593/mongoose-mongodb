@@ -2,8 +2,8 @@
 
 import mongoose from "mongoose";
 
-const connectDB = () => {
-  return mongoose.connect("mongodb://127.0.0.1:27017/studentdb")
+const connectDB = (DATABASE_URL) => {
+  return mongoose.connect(DATABASE_URL)
     .then(() => {
     console.log("Database Connected successfully..");
     })

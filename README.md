@@ -22,15 +22,15 @@ nodemon index.js
 
 git init
 
-git branch -M 1-mongoose
+git branch -M 2-mongoose-env-then
 
 git add .
 
 git commit -m "mongodb-mongoose"
 
-git push -u origin 1-mongoose
+git push -u origin 2-mongoose-env-then
 
-git push -f -u origin 1-mongoose
+git push -f -u origin 2-mongoose-env-then
 
 git branch
 
