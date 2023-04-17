@@ -15,17 +15,20 @@ tb restart re
     aisa krne se configure auth se hat jayega-----------//
 
     
+// -------------------create user----------------
 db.createUser({user:'geekyshows',pwd:'123456',roles:[{role:'read',db:'schooldb'}]})
 
 // show users
 // show dbs
 
+// insert student
 db.student.insertOne({"name":"Sonam","age":23})
 
 exit
 
 db.student.find()
 
+//-----isse authorization dete hai is user ke liye---------
 // mongosh --authenticationDatabase "schooldb" -u "geekyshows" -p "123456"
 
 // use schooldb
@@ -33,6 +36,7 @@ db.student.find()
 db.student.find()
 
 // show users
+
 
 
 
