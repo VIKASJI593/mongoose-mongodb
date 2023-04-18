@@ -1,5 +1,6 @@
 import express from "express";
- import connectDB from './db/connectdb.js'
+import connectDB from './db/connectdb.js'
+import './models/Student.js'
 const app = express();
 const port = process.env.PORT || "8000";
 

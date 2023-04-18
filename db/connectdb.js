@@ -2,12 +2,11 @@ import mongoose from "mongoose";
 
 const connectDB = async (DATABASE_URL) => {
   try {
-   
-   const DB_OPTIONS ={
-    user:'geekyshows',
-    pass:'123456',
+    const DB_OPTIONS ={
+    // user:'geekyshows',
+    // pass:'123456',
     dbName:'schooldb',
-    authsource:'schooldb'
+    //authsource:'schooldb'
    }
    
     await mongoose.connect(DATABASE_URL,DB_OPTIONS);
