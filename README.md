@@ -1,14 +1,14 @@
 git init
 
-git branch -M 10-mongoose-multidoc
+git branch -M 11-retreive
 
 git add .
 
 git commit -m "mongodb-mongoose"
 
-git push -u origin 10-mongoose-multidoc
+git push -u origin 11-retreive
 
-git push -f -u origin 10-mongoose-multidoc
+git push -f -u origin 11-retreive
 
 git branch
 

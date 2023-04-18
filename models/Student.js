@@ -19,67 +19,10 @@ const studentSchema = new mongoose.Schema({
 // compiling schema
 const studentModel = mongoose.model("student", studentSchema);
 
-//createDoc KO APP.JS ME CALL KR DIYA
+//Retreive All Document
+const getAlldoc = async() =>{
+  const result = await studentModel.find()
+  console.log(result);
+}
 
-const createDoc = async () => {
-    try {
-      //creating new docoment
-      const studentdoc = new studentModel({
-        name: "rahul",
-        age: 5,
-        fees: 6500.4,
-        hobbies: ["dancing", "reading"],
-        isActive: true,
-        comments: [{ value: "this is good mongoose" }],
-      });
-      //save document
-      const result = await studentdoc.save();
-      console.log(result);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-const createMultiDoc = async () => {
-  try {
-    //creating new docoment
-    const pritiDoc = new studentModel({
-      name: "Priti",
-      age: 25,
-      fees: 8500.4,
-      hobbies: ["dancing", "reading"],
-      isActive: true,
-      comments: [{ value: "this is good" }],
-    });
-
-    //creating new docoment
-    const kabirDoc = new studentModel({
-      name: "Kabir",
-      age: 21,
-      fees: 8700.4,
-      hobbies: ["dancing", "reading"],
-      isActive: true,
-      comments: [{ value: "this is good mongoose" }],
-    });
-
-    //creating new docoment
-    const jaydoc = new studentModel({
-      name: "Jay",
-      age: 27,
-      fees: 8400.4,
-      hobbies: ["dancing", "reading"],
-      isActive: true,
-      comments: [{ value: "this is good mongoose" }],
-    });
-    //save document
-    const result = await studentModel.insertMany([
-      pritiDoc,
-      kabirDoc,
-      jaydoc,
-    ]);
-    console.log(result);
-  } catch (error) {
-    console.log(error);
-  }
-};
-export  {createDoc, createMultiDoc};
+export  {getAlldoc};
