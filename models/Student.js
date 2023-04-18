@@ -16,13 +16,14 @@ const studentSchema = new mongoose.Schema({
   join: { type: Date, default: Date.now },
 });
 
-/*****3rd step****************compiling schema*** */ 
+/*****3rd step****************compiling schema*** */
 const studentModel = mongoose.model("student", studentSchema);
 
 /**********4th stp****************Retreive All Document*******/
-const getAlldoc = async() =>{
-  const result = await studentModel.find()
+const getAlldoc = async () => {
+  const result = await studentModel.find();
   console.log(result);
-}
+  result.forEach((item) => console.log(item.name));
+};
 /****5th step*********************export all doc********** */
-export  {getAlldoc};
+export { getAlldoc };
