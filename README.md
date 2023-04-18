@@ -1,14 +1,14 @@
 git init
 
-git branch -M 9-mongoose-insert-many
+git branch -M 10-mongoose-multidoc
 
 git add .
 
 git commit -m "mongodb-mongoose"
 
-git push -u origin 9-mongoose-insert-many
+git push -u origin 10-mongoose-multidoc
 
-git push -f -u origin 9-mongoose-insert-many
+git push -f -u origin 10-mongoose-multidoc
 
 git branch
 
