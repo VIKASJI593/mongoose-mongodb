@@ -20,22 +20,46 @@ const studentSchema = new mongoose.Schema({
 const studentModel = mongoose.model("student", studentSchema);
 
 //createDoc KO APP.JS ME CALL KR DIYA
-const createDoc = async (nm,ag,fe,hob,isact,comt) => {
+const createDoc = async () => {
   try {
     //creating new docoment
-    const studentdoc = new studentModel({
-      name: nm,
-      age: ag,
-      fees: fe,
-      hobbies: hob,
-      isActive: isact,
-      comments: comt,
+    const rohanDoc = new studentModel({
+      name: "Rohan",
+      age: 25,
+      fees: 8500.4,
+      hobbies: ["dancing", "reading"],
+      isActive: true,
+      comments: [{ value: "this is good" }],
+    });
+
+    //creating new docoment
+    const sumanDoc = new studentModel({
+      name: "Suman",
+      age: 21,
+      fees: 8700.4,
+      hobbies: ["dancing", "reading"],
+      isActive: true,
+      comments: [{ value: "this is good mongoose" }],
+    });
+
+    //creating new docoment
+    const kunaldoc = new studentModel({
+      name: "Kunal",
+      age: 27,
+      fees: 8400.4,
+      hobbies: ["dancing", "reading"],
+      isActive: true,
+      comments: [{ value: "this is good mongoose" }],
     });
     //save document
-    const result = await studentdoc.save();
+    const result = await studentModel.insertMany([
+      rohanDoc,
+      sumanDoc,
+      kunaldoc,
+    ]);
     console.log(result);
   } catch (error) {
     console.log(error);
   }
 };
-export default createDoc
+export default createDoc;

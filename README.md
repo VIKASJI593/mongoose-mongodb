@@ -1,14 +1,14 @@
 git init
 
-git branch -M 8-mongoose-create-CALL
+git branch -M 9-mongoose-insert-many
 
 git add .
 
 git commit -m "mongodb-mongoose"
 
-git push -u origin 8-mongoose-create-CALL
+git push -u origin 9-mongoose-insert-many
 
-git push -f -u origin 8-mongoose-create-CALL
+git push -f -u origin 9-mongoose-insert-many
 
 git branch
 
