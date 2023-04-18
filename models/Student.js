@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-/********************2nd step**************defining schema************/
+//------------2nd step-----------defining schema---------/
 const studentSchema = new mongoose.Schema({
   name: { type: String, required: true, trim: true },
   age: { type: Number, required: true, trim: true },
@@ -16,17 +16,25 @@ const studentSchema = new mongoose.Schema({
   join: { type: Date, default: Date.now },
 });
 
-/*****3rd step****************compiling schema*** */
+//----------3rd step------------------compiling schema--------------/
 const studentModel = mongoose.model("student", studentSchema);
-
 
 const getAlldoc = async () => {
   const result = await studentModel.find();
-}
-/**********4th stp****************Retreive All Document with specific field or path*******/
+};
+//-----------------4th stp-----------------Retreive All Document with specific field or path---check any one all are same result--/
 const getAlldocSpecificField = async () => {
-  const result = await studentModel.find().select('name age fees');
+  
+  //-------------------include-----------------
+  //const result = await studentModel.find().select('name age');
+
+  //---include-------as an array----
+  //const result = await studentModel.find().select(["name", "age"]);
+
+  //--include---as an object----------
+  const result = await studentModel.find().select({name :1, age :1 })
+
   console.log(result);
 };
-/****5th step*********************export all doc********** */
-export { getAlldoc,getAlldocSpecificField };
+//------5th step--------------export all doc---------------------/
+export { getAlldoc, getAlldocSpecificField };
