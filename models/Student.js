@@ -24,15 +24,21 @@ const getAlldoc = async () => {
 };
 //-----------------4th stp-----------------Retreive All Document with specific field or path---check any one all are same result--/
 const getAlldocSpecificField = async () => {
-  
   //-------------------exclude-----------------
   //const result = await studentModel.find().select('-name -age');
+  
 
   //---exclude-------as an array----
   //const result = await studentModel.find().select(["-name", "-age"]);
 
   //--exclude---as an object----------//
-    const result = await studentModel.find().select({name :0, age : 0})
+  //const result = await studentModel.find().select({ name: 0, age: 0 });
+
+  //------exclude without .select------
+  //const result = await studentModel.find({},'-name -age');
+
+  //------include without .select------
+  const result = await studentModel.find({},'name age');
   console.log(result);
 };
 //------5th step--------------export all doc---------------------/
