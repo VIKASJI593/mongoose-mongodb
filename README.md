@@ -1,14 +1,14 @@
 git init
 
-git branch -M 13-retreive-specific-all
+git branch -M 14-retreive-getAlldocSpecificField
 
 git add .
 
 git commit -m "mongodb-mongoose"
 
-git push -u origin 13-retreive-specific-all
+git push -u origin 14-retreive-getAlldocSpecificField
 
-git push -f -u origin 13-retreive-specific-all
+git push -f -u origin 14-retreive-getAlldocSpecificField
 
 git branch
 
