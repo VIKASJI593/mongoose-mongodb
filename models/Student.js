@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-//defining schema
+/********************2nd step**************defining schema************/
 const studentSchema = new mongoose.Schema({
   name: { type: String, required: true, trim: true },
   age: { type: Number, required: true, trim: true },
@@ -16,13 +16,13 @@ const studentSchema = new mongoose.Schema({
   join: { type: Date, default: Date.now },
 });
 
-// compiling schema
+/*****3rd step****************compiling schema*** */ 
 const studentModel = mongoose.model("student", studentSchema);
 
-//Retreive All Document
+/**********4th stp****************Retreive All Document*******/
 const getAlldoc = async() =>{
   const result = await studentModel.find()
   console.log(result);
 }
-
+/****5th step*********************export all doc********** */
 export  {getAlldoc};

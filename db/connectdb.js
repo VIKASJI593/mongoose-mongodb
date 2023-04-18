@@ -1,3 +1,4 @@
+/****************step 1*********connect mongodb*********** */
 import mongoose from "mongoose";
 
 const connectDB = async (DATABASE_URL) => {
