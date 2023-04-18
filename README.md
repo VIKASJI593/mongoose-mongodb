@@ -1,14 +1,14 @@
 git init
 
-git branch -M 6-mongoose-schema
+git branch -M 7-mongoose-create
 
 git add .
 
 git commit -m "mongodb-mongoose"
 
-git push -u origin 6-mongoose-schema
+git push -u origin 7-mongoose-create
 
-git push -f -u origin 6-mongoose-schema
+git push -f -u origin 7-mongoose-create
 
 git branch
 
