@@ -16,22 +16,20 @@ const studentSchema = new mongoose.Schema({
   join: { type: Date, default: Date.now },
 });
 
-//schema path
-//console.log(studentSchema.path('age'));
-
 // compiling schema
 const studentModel = mongoose.model("student", studentSchema);
 
-const createDoc = async () => {
+//createDoc KO APP.JS ME CALL KR DIYA
+const createDoc = async (nm,ag,fe,hob,isact,comt) => {
   try {
     //creating new docoment
     const studentdoc = new studentModel({
-      name: "rahul",
-      age: 5,
-      fees: 6500.4,
-      hobbies: ["dancing", "reading"],
-      isActive: true,
-      comments: [{ value: "this is good mongoose" }],
+      name: nm,
+      age: ag,
+      fees: fe,
+      hobbies: hob,
+      isActive: isact,
+      comments: comt,
     });
     //save document
     const result = await studentdoc.save();
