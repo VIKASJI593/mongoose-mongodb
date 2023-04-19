@@ -26,11 +26,55 @@ const updateDocbyId = async (id) => {
     //const result = await studentModel.findByIdAndUpdate(id, { name: "sunil" });
 
     //isse updated document dikhega
-    const result = await studentModel.findByIdAndUpdate(id,{ name: "Sameer"},{ returnDocument:"after"});
-      
+    const result = await studentModel.findByIdAndUpdate(
+      id,
+      { name: "Sameer" },
+      { returnDocument: "after" }
+    );
+
     console.log(result);
   } catch (error) {
     console.log(error);
   }
 };
-export { updateDocbyId };
+
+const updateOneDocbyId = async (id) => {
+  try {
+    //{ _id field name hai}  [id jiska id lenge wo hai ]
+    //const result = await studentModel.updateOne({ _id: id }, { name: "Sujit" });
+
+    // upsert
+    const result = await studentModel.updateOne(
+      { _id: id },
+      { name: "Arjun" },
+      { upsert: true }
+    );
+
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const updateOneDocbyAge = async (a) => {
+  try {
+    //{ _id field name hai}  [id jiska id lenge wo hai ]
+    const result = await studentModel.updateOne({ age: a }, { name: "Mouse" });
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const updateManyDoc = async (a) => {
+  try {
+    //{ _id field name hai}  [id jiska id lenge wo hai ]
+    // const result = await studentModel.updateMany({ age: a }, { name: "Dollar" });
+
+    const result = await studentModel.updateMany({ age: a }, { name: "Math" },{upsert:true});
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+};
+export { updateDocbyId, updateOneDocbyId, updateOneDocbyAge, updateManyDoc };
