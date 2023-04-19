@@ -1,14 +1,16 @@
+npm run dev
+  
 git init
 
-git branch -M 18-update
+git branch -M 20-delete
 
 git add . 
 
 git commit -m "mongodb-mongoose"
 
-git push -u origin 18-update
+git push -u origin 20-delete
 
-git push -f -u origin 18-update
+git push -f -u origin 20-delete
 
 git branch
 

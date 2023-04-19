@@ -19,62 +19,48 @@ const studentSchema = new mongoose.Schema({
 //----------3rd step------------------compiling schema--------------/
 const studentModel = mongoose.model("student", studentSchema);
 
-//-----------------4th stp-----------------update  Document with Id ----
-const updateDocbyId = async (id) => {
+//-----------------4th stp-----------------delete  Document  ----
+const deleteDocbyId = async (id) => {
   try {
     // isse jisko choose kiye wo dikhega
-    //const result = await studentModel.findByIdAndUpdate(id, { name: "sunil" });
-
-    //isse updated document dikhega
-    const result = await studentModel.findByIdAndUpdate(
-      id,
-      { name: "Sameer" },
-      { returnDocument: "after" }
-    );
-
+    const result = await studentModel.findByIdAndDelete(id);
     console.log(result);
   } catch (error) {
     console.log(error);
   }
 };
 
-const updateOneDocbyId = async (id) => {
+const deleteOneDoc = async (id) => {
   try {
     //{ _id field name hai}  [id jiska id lenge wo hai ]
-    //const result = await studentModel.updateOne({ _id: id }, { name: "Sujit" });
-
-    // upsert
-    const result = await studentModel.updateOne(
-      { _id: id },
-      { name: "Arjun" },
-      { upsert: true }
-    );
-
+    const result = await studentModel.deleteOne({ _id: id });
     console.log(result);
   } catch (error) {
     console.log(error);
   }
 };
 
-const updateOneDocbyAge = async (a) => {
+const deleteOneDocbyAge = async (a) => {
   try {
     //{ _id field name hai}  [id jiska id lenge wo hai ]
-    const result = await studentModel.updateOne({ age: a }, { name: "Mouse" });
+    const result = await studentModel.deleteOne({ age: a });
     console.log(result);
   } catch (error) {
     console.log(error);
   }
 };
 
-const updateManyDoc = async (a) => {
+const deleteManyDoc = async (a) => {
   try {
     //{ _id field name hai}  [id jiska id lenge wo hai ]
-    // const result = await studentModel.updateMany({ age: a }, { name: "Dollar" });
+    const result = await studentModel.deleteMany({ age: a });
 
-    const result = await studentModel.updateMany({ age: a }, { name: "Math" },{upsert:true});
+    //const result = await studentModel.deleteMany({ age: a }, { name: "Math" },{upsert:true});
     console.log(result);
   } catch (error) {
     console.log(error);
   }
 };
-export { updateDocbyId, updateOneDocbyId, updateOneDocbyAge, updateManyDoc };
+
+//-------------------------5th step------------export
+export { deleteDocbyId, deleteOneDoc, deleteOneDocbyAge, deleteManyDoc };
