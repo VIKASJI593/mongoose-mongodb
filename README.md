@@ -1,14 +1,14 @@
 git init
 
-git branch -M 17-retreive-query-operator
+git branch -M 18-update
 
 git add .
 
 git commit -m "mongodb-mongoose"
 
-git push -u origin 17-retreive-query-operator
+git push -u origin 18-update
 
-git push -f -u origin 17-retreive-query-operator
+git push -f -u origin 18-update
 
 git branch
 
